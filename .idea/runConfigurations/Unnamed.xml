@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="ClientSide.Client" />
+    <module name="Fall-23-Final-Proj-Client" />
+    <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\nikhi\.jdks\openjdk-21.0.1\javafx-sdk-21.0.1\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
