@@ -32,7 +32,7 @@ public class ClientController {
 
     @FXML
     void logUserIn(){
-        System.out.print("Logged in!");
+        System.out.print("Logged in!ll");
     }
 
     public static Client client;

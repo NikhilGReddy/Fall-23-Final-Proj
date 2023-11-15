@@ -37,7 +37,7 @@ public class Client extends Application{
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("login.fxml"));
-        Scene scene = new Scene(root,400, 400);
+        Scene scene = new Scene(root,400, 401);
         Object clientController = fxmlLoader.getController();
         ClientController.client = this;
         primaryStage.setScene(scene);
