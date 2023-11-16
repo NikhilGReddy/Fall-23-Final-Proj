@@ -5,6 +5,10 @@ class Message {
     String input;
     int number;
 
+
+    String name;
+    String password;
+
     protected Message() {
         this.type = "";
         this.input = "";
@@ -17,5 +21,11 @@ class Message {
         this.input = input;
         this.number = number;
         System.out.println("client-side message created");
+    }
+
+    protected Message(String type, String name, String password){
+        this.type = type;
+        this.name = name;
+        this.password = password;
     }
 }
