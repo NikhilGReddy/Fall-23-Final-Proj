@@ -28,11 +28,26 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+
+
 public class ClientController {
 
     @FXML
-    void logUserIn(){
-        System.out.print("Logged in!ll");
+    private static TextField userTextField;
+
+    @FXML
+    private static PasswordField passWordTextField;
+
+    @FXML
+    static void logUserIn(){
+        String inputtedName = userTextField.getText();
+        String passWord = passWordTextField.getText();
+        String encryptedPassword = EncryptorDecryptor.encrypt(passWord);
+        String userPassMsg = "Username: " + inputtedName + " Password: " + encryptedPassword;
+        System.out.println(userPassMsg);
+        System.out.println(passWord);
+        Client.sendToServer(userPassMsg);
     }
 
     public static Client client;

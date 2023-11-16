@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +12,6 @@
   <content>
     <AnchorPane maxHeight="800.0" minHeight="400.0" minWidth="401.0" prefHeight="401.0" prefWidth="400.0">
          <children>
-            <TextField fx:id="passWordTextField" layoutX="124.0" layoutY="210.0" text="Enter your password:" />
             <TextField fx:id="userTextField" layoutX="124.0" layoutY="174.0" text="Enter your username:" />
             <Button fx:id="loginButton" layoutX="175.0" layoutY="247.0" mnemonicParsing="false" onAction="#logUserIn" text="login!" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
@@ -19,6 +19,7 @@
                   <Image url="@../eHills.png" />
                </image>
             </ImageView>
+            <PasswordField fx:id="passWordTextField" layoutX="123.0" layoutY="208.0" />
          </children></AnchorPane>
   </content>
 </TitledPane>

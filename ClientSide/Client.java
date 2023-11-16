@@ -19,15 +19,27 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class Client extends Application{
 
+    private static String host = "127.0.0.1";
+    private BufferedReader fromServer;
+    private PrintWriter toServer;
+    private Scanner consoleInput = new Scanner(System.in);
 
-    private static BufferedReader fromServer;
+
+
 
     public static void main(String[] args) {
         try {
-            //new Client().setUpNetworking();
+            new Client().setUpNetworking();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,13 +56,12 @@ public class Client extends Application{
         primaryStage.show();
     }
 
-    /*private void setUpNetworking() throws Exception {
-        String host;
+    private void setUpNetworking() throws Exception {
         @SuppressWarnings("resource")
         Socket socket = new Socket(host, 4242);
         System.out.println("Connecting to... " + socket);
-        Client.fromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        Client.toServer = new PrintWriter(socket.getOutputStream());
+        fromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        toServer = new PrintWriter(socket.getOutputStream());
 
         Thread readerThread = new Thread(new Runnable() {
             @Override
@@ -58,13 +69,45 @@ public class Client extends Application{
                 String input;
                 try {
                     while ((input = fromServer.readLine()) != null) {
-                        //System.out.println("From server: " + input);
-                        Message message = gson.fromJson(input, Message.class);
-                        processRequest(message);
+                        System.out.println("From server: " + input);
+                        processRequest(input);
                     }
                 } catch (Exception e) {
-                    System.out.println("Server Error: Restart the Server and Try Again.");
+                    e.printStackTrace();
                 }
             }
-        });*/
+        });
+
+        Thread writerThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    String input = consoleInput.nextLine();
+                    String[] variables = input.split(",");
+                    Message request = new Message(variables[0], variables[1], Integer.valueOf(variables[2]));
+                    GsonBuilder builder = new GsonBuilder();
+                    Gson gson = builder.create();
+                    sendToServer(gson.toJson(request));
+                }
+            }
+        });
+
+        readerThread.start();
+        writerThread.start();
+    }
+
+
+    protected void processRequest(String input) {
+        return;
+    }
+
+
+    protected static void sendToServer(String string) {
+        System.out.println("Sending to server: " + string);
+        toServer.println(string);
+        toServer.flush();
+    }
+
+
+
 }
