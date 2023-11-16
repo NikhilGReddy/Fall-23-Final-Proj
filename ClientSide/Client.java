@@ -31,8 +31,10 @@ public class Client extends Application{
 
     private static String host = "127.0.0.1";
     private BufferedReader fromServer;
-    private PrintWriter toServer;
+    private static PrintWriter toServer;
     private Scanner consoleInput = new Scanner(System.in);
+
+    public static Gson gson = new Gson();
 
 
 
@@ -70,7 +72,8 @@ public class Client extends Application{
                 try {
                     while ((input = fromServer.readLine()) != null) {
                         System.out.println("From server: " + input);
-                        processRequest(input);
+                        Message message = gson.fromJson(input, Message.class);
+                        processRequest(message);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -87,7 +90,7 @@ public class Client extends Application{
                     Message request = new Message(variables[0], variables[1], Integer.valueOf(variables[2]));
                     GsonBuilder builder = new GsonBuilder();
                     Gson gson = builder.create();
-                    sendToServer(gson.toJson(request));
+                    sendToServer(request);
                 }
             }
         });
@@ -97,14 +100,24 @@ public class Client extends Application{
     }
 
 
-    protected void processRequest(String input) {
-        return;
+    protected void processRequest(Message message) {
+        try{
+            switch (message.type){
+                case "loggedIn":
+                    ClientController.loginStatus = 1;
+                    break;
+                default:
+                    System.out.println("error has occured in processing your request");
+            }
+        } catch ( Exception e){
+            System.out.println("Something went wrong");
+        }
     }
 
 
-    protected static void sendToServer(String string) {
-        System.out.println("Sending to server: " + string);
-        toServer.println(string);
+    protected void sendToServer(Message message) {
+        System.out.println("Sending to server: ");
+        toServer.println(gson.toJson(message));
         toServer.flush();
     }
 

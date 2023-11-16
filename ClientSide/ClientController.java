@@ -33,22 +33,27 @@ import javafx.stage.Stage;
 
 public class ClientController {
 
-    @FXML
-    private static TextField userTextField;
+    public static int loginStatus;
+
+    public static Client client;
 
     @FXML
-    private static PasswordField passWordTextField;
+    private  TextField userTextField;
 
     @FXML
-    static void logUserIn(){
+    private PasswordField passWordTextField;
+
+    @FXML
+    void logUserIn(){
         String inputtedName = userTextField.getText();
         String passWord = passWordTextField.getText();
         String encryptedPassword = EncryptorDecryptor.encrypt(passWord);
-        String userPassMsg = "Username: " + inputtedName + " Password: " + encryptedPassword;
+        Message userPassMsg = new Message("login", inputtedName, encryptedPassword);
+        client.sendToServer(userPassMsg);
         System.out.println(userPassMsg);
         System.out.println(passWord);
-        Client.sendToServer(userPassMsg);
+
     }
 
-    public static Client client;
+
 }
