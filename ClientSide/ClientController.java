@@ -44,10 +44,10 @@ public class ClientController {
         String inputtedName = userTextField.getText();
         String passWord = passWordTextField.getText();
         String encryptedPassword = EncryptorDecryptor.encrypt(passWord);
-        String userPassMsd = "Username: " + inputtedName + " Password: " + encryptedPassword;
-        System.out.println(userPassMsd);
+        String userPassMsg = "Username: " + inputtedName + " Password: " + encryptedPassword;
+        System.out.println(userPassMsg);
         System.out.println(passWord);
-        Client.sendToServer(userPassMsd);
+        Client.sendToServer(userPassMsg);
     }
 
     public static Client client;
