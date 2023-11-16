@@ -4,6 +4,7 @@ class Message {
     String type;
     String input;
     int number;
+    double bidAmount;
 
 
     String name;
@@ -27,5 +28,12 @@ class Message {
         this.type = type;
         this.name = name;
         this.password = password;
+    }
+
+
+    protected Message(String type, String user, double bid){
+        this.type = type;
+        this.name = user;
+        this.bidAmount = bid;
     }
 }
