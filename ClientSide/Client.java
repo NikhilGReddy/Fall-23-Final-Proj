@@ -105,12 +105,16 @@ public class Client extends Application{
             switch (message.type){
                 case "loggedIn":
                     ClientController.loginStatus = 1;
+                    System.out.println("server received and returned");
+                    break;
+                case "invalidLogin":
+                    ClientController.loginStatus = -1;
                     break;
                 default:
                     System.out.println("error has occured in processing your request");
             }
         } catch ( Exception e){
-            System.out.println("Something went wrong");
+            System.out.println();
         }
     }
 

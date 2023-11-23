@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Trying to get project to run" />
+    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Trying to get project to run">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientSide/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientSide/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientSide/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/ClientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +98,8 @@
       <workItem from="1700083120236" duration="79000" />
       <workItem from="1700083251018" duration="2431000" />
       <workItem from="1700090907494" duration="2324000" />
+      <workItem from="1700094835859" duration="9218000" />
+      <workItem from="1700778060606" duration="4622000" />
     </task>
     <task id="LOCAL-00001" summary="Trying to get project to run">
       <option name="closed" value="true" />
@@ -128,7 +141,31 @@
       <option name="project" value="LOCAL" />
       <updated>1700094325937</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Trying to get project to run">
+      <option name="closed" value="true" />
+      <created>1700149762017</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700149762017</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Trying to get project to run">
+      <option name="closed" value="true" />
+      <created>1700149772222</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700149772222</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Trying to get project to run">
+      <option name="closed" value="true" />
+      <created>1700150263954</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700150263954</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +185,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Trying to get project to run" />
     <option name="LAST_COMMIT_MESSAGE" value="Trying to get project to run" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ClientSide/Client.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
