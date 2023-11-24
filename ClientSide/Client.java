@@ -110,6 +110,8 @@ public class Client extends Application{
                 case "invalidLogin":
                     ClientController.loginStatus = -1;
                     break;
+                case "initializeLanding":
+
                 default:
                     System.out.println("error has occured in processing your request");
             }

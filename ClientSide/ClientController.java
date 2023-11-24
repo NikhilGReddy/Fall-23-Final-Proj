@@ -32,7 +32,12 @@ import javafx.stage.Stage;
 
 
 
+
 public class ClientController {
+    FXMLLoader fxmlLoader = new FXMLLoader();
+    Stage stage;
+    Parent root;
+    Scene scene;
 
     public static int loginStatus;
 
@@ -62,22 +67,32 @@ public class ClientController {
     private PasswordField passWordTextField;
 
     @FXML
-    void logUserIn() throws IOException {
+    void logUserIn(ActionEvent event) throws IOException {
+        System.out.println("reached");
         String inputtedName = userTextField.getText();
         String passWord = passWordTextField.getText();
         String encryptedPassword = EncryptorDecryptor.encrypt(passWord);
         Message userPassMsg = new Message("login", inputtedName, encryptedPassword);
         client.sendToServer(userPassMsg);
-        while(loginStatus==0);
+        System.out.println("reached -1 ");
+        while(loginStatus ==0){
+            int x =1;
+        }
+        System.out.println("reached 0 ");
         if(loginStatus ==1) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            Stage primaryStage = new Stage();
-            Parent root = fxmlLoader.load(getClass().getResource("MainMenu.fxml"));
-            Scene scene = new Scene(root, 400, 400);
 
+            System.out.println("reached 1 ");
+            root = fxmlLoader.load(getClass().getResource("MainMenu.fxml").openStream());
+            System.out.println("reached 2 ");
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            System.out.println("reached 3 ");
+            scene = new Scene(root);
+            System.out.println("reached 4 ");
 
-            primaryStage.setScene(scene);
-            primaryStage.show();
+            stage.setScene(scene);
+            System.out.println("reached 5 ");
+            Message newMsg = new Message("initializeLanding");
+            stage.show();
         } else {
             loginStatus = 0;
             Alert invalidLogin = new Alert(AlertType.ERROR);

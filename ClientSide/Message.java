@@ -5,9 +5,10 @@ public class Message {
     String input;
     int number;
 
-    String imgURL;
+    String[] imgURL;
 
-    int timeLeft;
+    int[] timeLeft;
+    String[] itemName;
 
     String name;
     String password;
@@ -25,8 +26,9 @@ public class Message {
         this.password = password;
     }
 
-    protected Message(String imgURL, int timeLeft, String name){
-        this.imgURL =imgURL; this.timeLeft = timeLeft; this.name = name;
+    protected Message(String type,String[] imgURL, int[] timeLeft, String[] itemName){
+        this.type = type;
+        this.imgURL =imgURL; this.timeLeft = timeLeft; this.itemName = itemName;
     }
 
     protected Message(String type, String input, int number) {
@@ -35,6 +37,8 @@ public class Message {
         this.number = number;
         System.out.println("server-side message created");
     }
+
+
 
     protected Message(String type){
         this.type = type;

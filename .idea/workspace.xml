@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Trying to get project to run">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientSide/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +94,7 @@
       <workItem from="1700083251018" duration="2431000" />
       <workItem from="1700090907494" duration="2324000" />
       <workItem from="1700094835859" duration="9218000" />
-      <workItem from="1700778060606" duration="4622000" />
+      <workItem from="1700778060606" duration="8481000" />
     </task>
     <task id="LOCAL-00001" summary="Trying to get project to run">
       <option name="closed" value="true" />
@@ -165,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700150263954</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Trying to get project to run">
+      <option name="closed" value="true" />
+      <created>1700783408920</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700783408920</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,9 +193,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ClientSide/Client.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/ClientSide/ClientController.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
