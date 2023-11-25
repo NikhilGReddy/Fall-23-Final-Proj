@@ -92,6 +92,7 @@ public class ClientController {
             stage.setScene(scene);
             System.out.println("reached 5 ");
             Message newMsg = new Message("initializeLanding");
+            client.sendToServer(newMsg);
             stage.show();
         } else {
             loginStatus = 0;

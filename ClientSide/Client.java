@@ -26,6 +26,17 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+
+import javafx.util.Duration;
 
 public class Client extends Application{
 
@@ -111,7 +122,7 @@ public class Client extends Application{
                     ClientController.loginStatus = -1;
                     break;
                 case "initializeLanding":
-
+                    MainPageController.initializeMainMenu(message);
                 default:
                     System.out.println("error has occured in processing your request");
             }
