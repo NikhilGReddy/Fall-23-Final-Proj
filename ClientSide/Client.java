@@ -42,7 +42,7 @@ public class Client extends Application{
 
     private static String host = "127.0.0.1";
     private BufferedReader fromServer;
-    private static PrintWriter toServer;
+    public static PrintWriter toServer;
     private Scanner consoleInput = new Scanner(System.in);
 
     public static Gson gson = new Gson();
@@ -64,7 +64,7 @@ public class Client extends Application{
         Parent root = fxmlLoader.load(getClass().getResource("login.fxml"));
         Scene scene = new Scene(root,400, 401);
         Object clientController = fxmlLoader.getController();
-        ClientController.client = this;
+        Controller.client = this;
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -75,6 +75,9 @@ public class Client extends Application{
         System.out.println("Connecting to... " + socket);
         fromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         toServer = new PrintWriter(socket.getOutputStream());
+        Message newMsg = new Message("initializeLanding");
+        sendToServer(newMsg);
+
 
         Thread readerThread = new Thread(new Runnable() {
             @Override
@@ -82,7 +85,7 @@ public class Client extends Application{
                 String input;
                 try {
                     while ((input = fromServer.readLine()) != null) {
-                        System.out.println("From server: " + input);
+
                         Message message = gson.fromJson(input, Message.class);
                         processRequest(message);
                     }
@@ -115,14 +118,15 @@ public class Client extends Application{
         try{
             switch (message.type){
                 case "loggedIn":
-                    ClientController.loginStatus = 1;
+                    Controller.loginStatus = 1;
                     System.out.println("server received and returned");
                     break;
                 case "invalidLogin":
-                    ClientController.loginStatus = -1;
+                    Controller.loginStatus = -1;
                     break;
-                case "initializeLanding":
-                    MainPageController.initializeMainMenu(message);
+                case "landingInfo":
+                    Controller.imgURL = message.imgURL;
+                    Controller.items = message.itemName;
                 default:
                     System.out.println("error has occured in processing your request");
             }
