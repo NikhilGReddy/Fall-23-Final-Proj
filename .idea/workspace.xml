@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Got more functionality, busy-wait working and working on getting info from server">
+    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Can read info from server, and upload item info to javafx main page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientSide/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientSide/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientSide/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,8 @@
       <workItem from="1700094835859" duration="9218000" />
       <workItem from="1700778060606" duration="10462000" />
       <workItem from="1700936977754" duration="4130000" />
-      <workItem from="1700952145120" duration="20243000" />
+      <workItem from="1700952145120" duration="20315000" />
+      <workItem from="1701022323900" duration="12722000" />
     </task>
     <task id="LOCAL-00001" summary="Trying to get project to run">
       <option name="closed" value="true" />
@@ -191,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700941146800</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Can read info from server, and upload item info to javafx main page">
+      <option name="closed" value="true" />
+      <created>1700983915426</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700983915426</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,12 +218,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Trying to get project to run" />
     <MESSAGE value="Got more functionality, busy-wait working and working on getting info from server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got more functionality, busy-wait working and working on getting info from server" />
+    <MESSAGE value="Can read info from server, and upload item info to javafx main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can read info from server, and upload item info to javafx main page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="20" />
         </breakpoint>

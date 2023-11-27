@@ -128,7 +128,7 @@ public class Client extends Application{
                     Controller.imgURL = message.imgURL;
                     Controller.items = message.itemName;
                 default:
-                    System.out.println("error has occured in processing your request");
+                    //System.out.println("error has occured in processing your request");
             }
         } catch ( Exception e){
             System.out.println();
