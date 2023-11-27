@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.sun.tools.javac.Main;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,12 +30,12 @@ public class Controller {
 
     public static boolean doneInit =false;
     FXMLLoader fxmlLoader = new FXMLLoader();
-    Stage stage;
-    Parent root;
-    Scene scene;
+    public static Stage stage;
+    public static Parent root;
+    public static Scene scene;
     Gson gson = new Gson();
 
-    Map<String, List<String>> bidHistory = new HashMap<>();
+    static String bidHistory;
 
     public static String[] imgURL;
 
@@ -44,22 +45,22 @@ public class Controller {
     public static Client client;
 
 
-    public  String user;
+    public static String user;
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
 
-    int currentItem;
+    static int currentItem;
 
     public static String[] items;
 
     public static double minItemBid;
 
 
-
+    public static boolean doneBidProcessing = false;
     @FXML
     private GridPane MainMenuGrid;
 
-    @FXML private TextArea BidText;
+    @FXML private Text bidList;
     @FXML
     private ImageView ItemPic1;
 
@@ -88,7 +89,7 @@ public class Controller {
 
     @FXML private FlowPane MainFLowPane;
 
-    @FXML private FlowPane ItemFlowPane;
+    @FXML private static FlowPane ItemFlowPane;
 
     @FXML private Text ItemName;
 
@@ -194,9 +195,7 @@ public class Controller {
     public void viewItem1(ActionEvent actionEvent) throws IOException {
         minItemBid = 10.0;
         this.currentItem = 1;
-        bidHistory.put(items[0], new ArrayList<>());
-        bidHistory.get(items[0]).add("This is bid 1");
-        bidHistory.get(items[0]).add("This is bid 2");
+
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ItemDetailsBid.fxml"));
         root = loader.load();
@@ -212,14 +211,10 @@ public class Controller {
         ItemName.setText(items[0]);
         ItemPic = (ImageView) ItemFlowPane.lookup("#ItemPic");
         ItemPic.setImage(new Image(imgURL[0]));
-        BidText = (TextArea) ItemFlowPane.lookup("#BidText");
+        bidList = (Text) ItemFlowPane.lookup("#bidList");
 
-        String bids = "";
-        for(String c : bidHistory.get(items[0])){
-            bids += c;
-            bids+= "\n";
-        }
-        BidText.setText(bids);
+
+        bidList.setText(bidHistory);
         stage.show();
 
     }
@@ -240,31 +235,40 @@ public class Controller {
         System.exit(0);
     }
 
-    public void placeBid(ActionEvent actionEvent) {
+
+
+    public void placeBid(ActionEvent actionEvent) throws IOException {
 
         String b = bidAmt.getText();
         double b1 = 0;
         try {
             b1 = Double.valueOf(b);
 
-            if(b1<minItemBid){
+            if (b1 < minItemBid) {
                 Alert invalidBid = new Alert(AlertType.ERROR);
                 invalidBid.setTitle("Bid Amount too low");
                 invalidBid.setHeaderText("Please increase your bid");
-                Button okButton = (Button)invalidBid.getDialogPane().lookupButton( ButtonType.OK );
+                Button okButton = (Button) invalidBid.getDialogPane().lookupButton(ButtonType.OK);
                 okButton.setText("try again!");
                 invalidBid.showAndWait();
                 return;
             }
-            toServer.println(gson.toJson(new Message("Bid", this.currentItem,b1, this.user )));
-        } catch (Exception e){
+            toServer.println(gson.toJson(new Message("Bid", this.currentItem, b1, this.user)));
+            toServer.flush();
+        } catch (Exception e) {
             Alert invalidBid = new Alert(AlertType.ERROR);
             invalidBid.setTitle("Bid Format Failed");
             invalidBid.setHeaderText("Please try again with a new bid");
-            Button okButton = (Button)invalidBid.getDialogPane().lookupButton( ButtonType.OK );
+            Button okButton = (Button) invalidBid.getDialogPane().lookupButton(ButtonType.OK);
             okButton.setText("try again!");
             invalidBid.showAndWait();
         }
+        while (!doneBidProcessing) {
+            int x = 1;
+        }
+
+        Platform.runLater(()  -> {bidList.setText(bidHistory);
+        minAcceptPrice.setText("Min Acceptable Price: " + (minItemBid + 0.01)); });
 
     }
 

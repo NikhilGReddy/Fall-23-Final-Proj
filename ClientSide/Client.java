@@ -127,6 +127,12 @@ public class Client extends Application{
                 case "landingInfo":
                     Controller.imgURL = message.imgURL;
                     Controller.items = message.itemName;
+                    break;
+                case "bidPlaced":
+                    Controller.bidHistory = message.bids;
+                    Controller.minItemBid = message.newMax+0.01;
+                    Controller.doneBidProcessing = true;
+                    break;
                 default:
                     //System.out.println("error has occured in processing your request");
             }
