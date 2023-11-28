@@ -1,6 +1,10 @@
 package ClientSide;
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable {
+    double[] buyNowPrices;
+    double[] curPrices;
     String type;
     String input;
     int number;
@@ -17,7 +21,9 @@ public class Message {
     String name;
     double newMax;
     String password;
-
+    double curMax;
+    double buyNowPrice;
+    String[] descriptions;
     protected Message() {
         this.type = "";
         this.input = "";
@@ -31,15 +37,22 @@ public class Message {
         this.newMax = newMax;
     }
 
+
+
     protected Message(String type, String name, String password){
         this.type = type;
         this.name = name;
         this.password = password;
     }
 
-    protected Message(String type,String[] imgURL, int[] timeLeft, String[] itemName){
+    protected Message(String type,String[] imgURL, int[] timeLeft, String[] itemName, String[] descriptions, double[] curPrices, double[] buyNowPrices){
         this.type = type;
-        this.imgURL =imgURL; this.timeLeft = timeLeft; this.itemName = itemName;
+        this.imgURL =imgURL;
+        this.timeLeft = timeLeft;
+        this.itemName = itemName;
+        this.descriptions = descriptions;
+        this.curPrices = curPrices;
+        this.buyNowPrices = buyNowPrices;
     }
 
     protected Message(String type, int itemNum, double bidAmount, String bidUser){
@@ -55,6 +68,8 @@ public class Message {
         this.number = number;
         System.out.println("server-side message created");
     }
+
+
 
 
 

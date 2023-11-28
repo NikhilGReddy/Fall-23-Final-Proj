@@ -47,6 +47,9 @@ public class Client extends Application{
 
     public static Gson gson = new Gson();
 
+    static ClientController clientController;
+    static MainMenuController mainMenuController;
+
 
 
 
@@ -62,9 +65,9 @@ public class Client extends Application{
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("login.fxml"));
-        Scene scene = new Scene(root,400, 401);
-        Object clientController = fxmlLoader.getController();
-        Controller.client = this;
+        Scene scene  = new Scene(root, 400, 400);
+        clientController = fxmlLoader.getController();
+        ClientController.client  =this;
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -118,20 +121,25 @@ public class Client extends Application{
         try{
             switch (message.type){
                 case "loggedIn":
-                    Controller.loginStatus = 1;
+                    clientController.loginStatus = 1;
                     System.out.println("server received and returned");
                     break;
                 case "invalidLogin":
-                    Controller.loginStatus = -1;
+                    clientController.loginStatus = -1;
                     break;
                 case "landingInfo":
-                    Controller.imgURL = message.imgURL;
-                    Controller.items = message.itemName;
+                    mainMenuController.imgUrls = message.imgURL;
+                    mainMenuController.itemDescriptions = message.descriptions;
+                    mainMenuController.itemPrices = message.curPrices;
+                    mainMenuController.items = message.itemName;
+                    mainMenuController.buyNowPrices = message.buyNowPrices;
+                    mainMenuController.initLanding = true;
                     break;
                 case "bidPlaced":
-                    Controller.bidHistory = message.bids;
-                    Controller.minItemBid = message.newMax+0.01;
-                    Controller.doneBidProcessing = true;
+                    mainMenuController.controller.bids = message.bids;
+                    mainMenuController.controller.setCurPrice( message.newMax+0.01);
+                    mainMenuController.controller.doneBidProcessing = true;
+                    System.out.println("Bid placed");
                     break;
                 default:
                     //System.out.println("error has occured in processing your request");
