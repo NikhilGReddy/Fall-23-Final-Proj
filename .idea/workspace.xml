@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="You can place bids now, added page for detailed item viewing, working on processing for bids">
-      <change afterPath="$PROJECT_DIR$/ClientSide/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientSide/ItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientSide/MainMenuController.java" afterDir="false" />
+    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Whole lot of restructuring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701051252432</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Whole lot of restructuring">
+      <option name="closed" value="true" />
+      <created>1701196830050</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701196830050</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +231,8 @@
     <MESSAGE value="Got more functionality, busy-wait working and working on getting info from server" />
     <MESSAGE value="Can read info from server, and upload item info to javafx main page" />
     <MESSAGE value="You can place bids now, added page for detailed item viewing, working on processing for bids" />
-    <option name="LAST_COMMIT_MESSAGE" value="You can place bids now, added page for detailed item viewing, working on processing for bids" />
+    <MESSAGE value="Whole lot of restructuring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Whole lot of restructuring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -242,6 +241,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="20" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ClientSide/ItemController.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

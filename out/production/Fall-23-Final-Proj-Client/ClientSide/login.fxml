@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<TitledPane animated="false" maxHeight="400.0" maxWidth="-Infinity" minHeight="200.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" text="Login to EHills!" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientSide.Controller">
+<TitledPane animated="false" maxHeight="400.0" maxWidth="-Infinity" minHeight="200.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" text="Login to EHills!" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientSide.ClientController">
   <content>
     <AnchorPane maxHeight="800.0" minHeight="400.0" minWidth="401.0" prefHeight="401.0" prefWidth="400.0">
          <children>
@@ -20,6 +20,7 @@
                </image>
             </ImageView>
             <PasswordField fx:id="passWordTextField" layoutX="123.0" layoutY="208.0" />
+            <Button layoutX="179.0" layoutY="328.0" mnemonicParsing="false" onAction="#quitLogin" text="quit" />
          </children></AnchorPane>
   </content>
 </TitledPane>

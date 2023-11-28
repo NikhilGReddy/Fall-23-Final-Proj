@@ -9,6 +9,7 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.sun.tools.javac.Main;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -104,25 +105,14 @@ public class ItemController {
             int x  =1;
         }
         doneBidProcessing = false;
-        updateBidinfo();
-        while(!bidUpdate){
-            int x =1;
-        }
-        bidUpdate = false;
+
 
         System.out.println("Bid updated");
 
 
     }
 
-    void updateBidinfo(){
-        Platform.runLater(() -> {
-            bidList.setText(bids);
-            currentPrice.setText("Current Price: " + curPrice);
-            minAcceptPrice.setText("Min Bid Amount: " + (curPrice+0.01));
-        });
-        bidUpdate = true;
-    }
+
 
     public void setCurPrice(double price){
         this.curPrice = price;
@@ -148,5 +138,16 @@ public class ItemController {
         alert.setHeaderText(null);
         alert.setContentText("Your bid was invalid.");
         alert.showAndWait();
+    }
+
+    class UpDateBidList implements Runnable{
+
+
+        @Override
+        public void run(){
+            bidList.setText(bids);
+            currentPrice.setText("Current Price: " + curPrice);
+            minAcceptPrice.setText("Min Bid Amount: " + (curPrice+0.01));
+        }
     }
 }
