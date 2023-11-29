@@ -18,12 +18,19 @@ public class Message implements Serializable {
     String[] itemName;
     String bids;
 
+    String itemName1;
+
     String name;
     double newMax;
     String password;
     double curMax;
     double buyNowPrice;
     String[] descriptions;
+
+    protected Message(String type, int itemNum){
+        this.type = type;
+        this.itemNum = itemNum;
+    }
     protected Message() {
         this.type = "";
         this.input = "";

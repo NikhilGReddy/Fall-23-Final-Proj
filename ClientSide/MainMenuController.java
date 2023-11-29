@@ -34,6 +34,7 @@ public class MainMenuController {
     public String[] itemDescriptions;
     public String[] imgUrls;
 
+
     ItemController controller;
     ClientController parentController;
 
@@ -97,11 +98,33 @@ public class MainMenuController {
         Item3.setText(items[2]);
         Item4.setText(items[3]);
         Item5.setText(items[4]);
-        ItemPrice1.setText("Current Max Bid: " + itemPrices[0]);
-        ItemPrice2.setText("Current Max Bid: " + itemPrices[1]);
-        ItemPrice3.setText("Current Max Bid: " + itemPrices[2]);
-        ItemPrice4.setText("Current Max Bid: " + itemPrices[3]);
-        ItemPrice5.setText("Current Max Bid: " + itemPrices[4]);
+        if(items[0].contains("SOLD")){
+            ItemPrice1.setText("SOLD");
+        } else{
+            ItemPrice1.setText("Current Max Bid: " + itemPrices[0]);
+        }
+        if(items[1].contains("SOLD")){
+            ItemPrice2.setText("SOLD");
+        } else {
+            ItemPrice2.setText("Current Max Bid: " + itemPrices[1]);
+        }
+        if(items[2].contains("SOLD")){
+            ItemPrice3.setText("SOLD");
+        } else {
+            ItemPrice3.setText("Current Max Bid: " + itemPrices[2]);
+        }
+        if(items[3].contains("SOLD")){
+            ItemPrice4.setText("SOLD");
+        } else {
+            ItemPrice4.setText("Current Max Bid: " + itemPrices[3]);
+        }
+        if(items[4].contains("SOLD")){
+            ItemPrice5.setText("SOLD");
+        } else {
+            ItemPrice5.setText("Current Max Bid: " + itemPrices[4]);
+        }
+
+
         ItemPic1.setImage(new Image(imgUrls[0]));
         ItemPic2.setImage(new Image(imgUrls[1]));
         ItemPic3.setImage(new Image(imgUrls[2]));
@@ -119,55 +142,55 @@ public class MainMenuController {
         scene = new Scene(root);
         ItemController controller = fxmlLoader.getController();
         this.controller = controller;
-        controller.init(0,root, scene, stage, items[0],itemDescriptions[0], itemPrices[0],buyNowPrices[0],imgUrls[0], parentController, this);
+        controller.init(0,root, scene, stage, items[0],itemDescriptions[0], itemPrices[0],buyNowPrices[0],imgUrls[0], parentController, this, "");
         stage.setScene(scene);
         stage.show();
     }
 
     public void viewItem2(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        root = fxmlLoader.load(getClass().getResource("ItemDetailsBid.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemDetailsBid.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         ItemController controller = fxmlLoader.getController();
         this.controller = controller;
-        controller.init(1,root, scene, stage, items[1],itemDescriptions[1], itemPrices[1],buyNowPrices[1],imgUrls[1], parentController, this);
+        controller.init(1,root, scene, stage, items[1],itemDescriptions[1], itemPrices[1],buyNowPrices[1],imgUrls[1], parentController, this, "");
         stage.setScene(scene);
         stage.show();
     }
 
     public void viewItem3(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        root = fxmlLoader.load(getClass().getResource("ItemDetailsBid.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemDetailsBid.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         ItemController controller = fxmlLoader.getController();
         this.controller = controller;
-        controller.init(2,root, scene, stage, items[2],itemDescriptions[2], itemPrices[2],buyNowPrices[2],imgUrls[2], parentController, this);
+        controller.init(2,root, scene, stage, items[2],itemDescriptions[2], itemPrices[2],buyNowPrices[2],imgUrls[2], parentController, this, "");
         stage.setScene(scene);
         stage.show();
     }
 
     public void viewItem4(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        root = fxmlLoader.load(getClass().getResource("ItemDetailsBid.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemDetailsBid.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         ItemController controller = fxmlLoader.getController();
         this.controller = controller;
-        controller.init(3,root, scene, stage, items[3],itemDescriptions[3], itemPrices[3],buyNowPrices[3],imgUrls[3], parentController, this);
+        controller.init(3,root, scene, stage, items[3],itemDescriptions[3], itemPrices[3],buyNowPrices[3],imgUrls[3], parentController, this, "");
         stage.setScene(scene);
         stage.show();
     }
 
     public void viewItem5(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        root = fxmlLoader.load(getClass().getResource("ItemDetailsBid.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemDetailsBid.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         ItemController controller = fxmlLoader.getController();
         this.controller = controller;
-        controller.init(4,root, scene, stage, items[4],itemDescriptions[4], itemPrices[4],buyNowPrices[4],imgUrls[4], parentController, this);
+        controller.init(4,root, scene, stage, items[4],itemDescriptions[4], itemPrices[4],buyNowPrices[4],imgUrls[4], parentController, this, "");
         stage.setScene(scene);
         stage.show();
     }
@@ -176,7 +199,15 @@ public class MainMenuController {
         System.exit(0);
     }
 
-    public void logout(ActionEvent actionEvent) {
+    public void logout(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+        root = fxmlLoader.load();
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        ClientController.loginStatus = 0;
+        MainMenuController.loggedIn = false;
+        stage.show();
     }
 
     public String getUser(){

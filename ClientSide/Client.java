@@ -1,5 +1,6 @@
 package ClientSide;
-import java.util.Scanner;
+import java.net.http.WebSocket;
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+
 import javafx.stage.Stage;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -34,11 +36,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 import javafx.util.Duration;
 
-public class Client extends Application{
+public class Client extends Application  {
 
     private static String host = "127.0.0.1";
     private BufferedReader fromServer;
@@ -63,6 +67,7 @@ public class Client extends Application{
     }
     @Override
     public void start(Stage primaryStage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("login.fxml"));
         Scene scene  = new Scene(root, 400, 400);
@@ -135,11 +140,12 @@ public class Client extends Application{
                     mainMenuController.buyNowPrices = message.buyNowPrices;
                     mainMenuController.initLanding = true;
                     break;
-                case "bidPlaced":
-                    mainMenuController.controller.bids = message.bids;
-                    mainMenuController.controller.setCurPrice( message.newMax+0.01);
-                    mainMenuController.controller.doneBidProcessing = true;
-                    System.out.println("Bid placed");
+                case "itemInit":
+                    mainMenuController.controller.setBids( message.bids);
+                    mainMenuController.controller.setCurPrice(message.curMax);
+                    mainMenuController.controller.setName(message.itemName1);
+                    mainMenuController.controller.itemInfoReceived = true;
+                    System.out.println("7  " + message.bids);
                     break;
                 default:
                     //System.out.println("error has occured in processing your request");

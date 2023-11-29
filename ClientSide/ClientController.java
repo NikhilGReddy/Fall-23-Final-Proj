@@ -1,10 +1,13 @@
 package ClientSide;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.sun.javafx.PlatformUtil;
+import com.sun.media.jfxmedia.locator.Locator;
 import com.google.gson.Gson;
 import com.sun.tools.javac.Main;
 import javafx.application.Platform;
@@ -16,10 +19,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -61,12 +67,17 @@ public class ClientController {
         //Send message to server
         toServer.println(gson.toJson(loginMessage));
         toServer.flush();
-
+        int k =0;
         //BusyWait for loginstatus
         while(loginStatus==0){
-            int x = 1;
-        }
+            k++;
+            if(k%500 ==0){
+                System.out.print(k);
+            }
+            if(loginStatus == 1)break;
 
+        }
+        System.out.println("reached between");
         if(loginStatus>0){
             ClientController.user = userTextField.getText();
             ClientController.loggedIn = true;
@@ -78,6 +89,11 @@ public class ClientController {
             MainMenuController controller = fxmlLoader.getController();
             Client.mainMenuController = controller;
             controller.init(root,stage,scene,user,loginStatus,loggedIn,client, this);
+            String mediaFile = getClass().getResource("BackgroundMusic.mp3").toExternalForm();
+            Media audio = new Media(mediaFile);
+            MediaPlayer mediaPlayerBG = new MediaPlayer(audio);
+            mediaPlayerBG.setVolume(0.05);
+            mediaPlayerBG.play();
             stage.setScene(scene);
             stage.show();
         } else {
