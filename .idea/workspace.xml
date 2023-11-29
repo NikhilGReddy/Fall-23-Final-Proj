@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="Still trying to get multithread functionality ironed out">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unnamed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Client.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientSide/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSide/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Fall-23-Final-Proj-Client/ClientSide/Message.class" afterDir="false" />
-    </list>
+    <list default="true" id="1533b44c-4ca9-4948-a1a1-4414363b37bb" name="Changes" comment="All base functionality and some extras done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701199333997</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="All base functionality and some extras done">
+      <option name="closed" value="true" />
+      <created>1701230585759</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701230585759</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +246,8 @@
     <MESSAGE value="You can place bids now, added page for detailed item viewing, working on processing for bids" />
     <MESSAGE value="Whole lot of restructuring" />
     <MESSAGE value="Still trying to get multithread functionality ironed out" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still trying to get multithread functionality ironed out" />
+    <MESSAGE value="All base functionality and some extras done" />
+    <option name="LAST_COMMIT_MESSAGE" value="All base functionality and some extras done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
